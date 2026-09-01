@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Troubleshooting"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/internetButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="No Internet" />
+
+        <Button
+            android:id="@+id/slowPcButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Slow PC" />
+
+        <Button
+            android:id="@+id/usbButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="USB not detected" />
+
+    </LinearLayout>
+
+</ScrollView>
