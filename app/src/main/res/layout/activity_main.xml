@@ -1,69 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="@color/vs_background"
+    android:padding="20dp">
+
+    <!-- App title -->
 
     <TextView
-        android:id="@+id/titleText"
+        android:id="@+id/appTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="IT STUDY BUDDY"
+        android:textColor="@color/vs_primary"
         android:textSize="28sp"
         android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/appSubtitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Learn • Practice • Grow"
+        android:textColor="@color/vs_text_secondary"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/appTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Programming -->
 
     <Button
         android:id="@+id/programmingButton"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="64dp"
+        android:layout_marginTop="24dp"
         android:text="Programming"
+        android:textColor="@color/vs_text"
+        android:textSize="16sp"
+        android:backgroundTint="@color/vs_surface_light"
+        app:layout_constraintTop_toBottomOf="@id/appSubtitle"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titleText"/>
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- HTML & CSS -->
 
     <Button
         android:id="@+id/htmlButton"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="64dp"
+        android:layout_marginTop="10dp"
         android:text="HTML &amp; CSS"
+        android:textColor="@color/vs_text"
+        android:textSize="16sp"
+        android:backgroundTint="@color/vs_surface_light"
+        app:layout_constraintTop_toBottomOf="@id/programmingButton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/programmingButton"/>
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- SQL -->
 
     <Button
         android:id="@+id/sqlButton"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="64dp"
+        android:layout_marginTop="10dp"
         android:text="SQL"
+        android:textColor="@color/vs_text"
+        android:textSize="16sp"
+        android:backgroundTint="@color/vs_surface_light"
+        app:layout_constraintTop_toBottomOf="@id/htmlButton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/htmlButton"/>
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Networking -->
 
     <Button
         android:id="@+id/networkingButton"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="10dp"
         android:text="Networking"
+        android:textColor="@color/vs_text"
+        android:textSize="16sp"
+        android:backgroundTint="@color/vs_surface_light"
         app:layout_constraintTop_toBottomOf="@id/sqlButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
+    <!-- Troubleshooting -->
+
     <Button
         android:id="@+id/troubleshootingButton"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="10dp"
         android:text="Troubleshooting"
+        android:textColor="@color/vs_text"
+        android:textSize="16sp"
+        android:backgroundTint="@color/vs_surface_light"
         app:layout_constraintTop_toBottomOf="@id/networkingButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

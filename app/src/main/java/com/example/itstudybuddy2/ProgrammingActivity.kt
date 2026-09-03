@@ -12,7 +12,6 @@ class ProgrammingActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_programming)
 
-        // Variables
         findViewById<Button>(R.id.variablesButton)
             .setOnClickListener {
 
@@ -23,7 +22,6 @@ class ProgrammingActivity : AppCompatActivity() {
                 )
             }
 
-        // If Statements
         findViewById<Button>(R.id.ifButton)
             .setOnClickListener {
 
@@ -34,7 +32,6 @@ class ProgrammingActivity : AppCompatActivity() {
                 )
             }
 
-        // Loops
         findViewById<Button>(R.id.loopsButton)
             .setOnClickListener {
 
@@ -45,7 +42,6 @@ class ProgrammingActivity : AppCompatActivity() {
                 )
             }
 
-        // Functions
         findViewById<Button>(R.id.functionsButton)
             .setOnClickListener {
 
@@ -62,6 +58,7 @@ class ProgrammingActivity : AppCompatActivity() {
         description: String,
         code: String
     ) {
+
         val intent =
             Intent(this, TopicActivity::class.java)
 

@@ -1,47 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/vs_background"
+    android:padding="20dp">
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/networkingTitle"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="20dp">
+        android:text="Networking"
+        android:textColor="@color/vs_text"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Networking"
-            android:textSize="26sp"
-            android:textStyle="bold" />
+    <Button
+        android:id="@+id/ipButton"
+        android:layout_width="0dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="24dp"
+        android:text="IP Address"
+        android:textColor="@color/vs_text"
+        android:backgroundTint="@color/vs_surface_light"
+        app:layout_constraintTop_toBottomOf="@id/networkingTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-        <Button
-            android:id="@+id/ipButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="IP Address" />
+    <Button
+        android:id="@+id/dnsButton"
+        android:layout_width="0dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="10dp"
+        android:text="DNS"
+        android:textColor="@color/vs_text"
+        android:backgroundTint="@color/vs_surface_light"
+        app:layout_constraintTop_toBottomOf="@id/ipButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-        <Button
-            android:id="@+id/dnsButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="DNS" />
+    <Button
+        android:id="@+id/dhcpButton"
+        android:layout_width="0dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="10dp"
+        android:text="DHCP"
+        android:textColor="@color/vs_text"
+        android:backgroundTint="@color/vs_surface_light"
+        app:layout_constraintTop_toBottomOf="@id/dnsButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-        <Button
-            android:id="@+id/dhcpButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="DHCP" />
+    <Button
+        android:id="@+id/tcpButton"
+        android:layout_width="0dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="10dp"
+        android:text="TCP / UDP"
+        android:textColor="@color/vs_text"
+        android:backgroundTint="@color/vs_surface_light"
+        app:layout_constraintTop_toBottomOf="@id/dhcpButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-        <Button
-            android:id="@+id/tcpButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TCP / UDP" />
-
-    </LinearLayout>
-
-</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

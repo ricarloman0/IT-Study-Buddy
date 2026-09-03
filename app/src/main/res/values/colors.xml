@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+
+    <color name="vs_background">#0F1115</color>
+    <color name="vs_surface">#181B21</color>
+    <color name="vs_surface_light">#22262D</color>
+
+    <color name="vs_primary">#9B6CFF</color>
+    <color name="vs_primary_dark">#7547D9</color>
+
+    <color name="vs_text">#FFFFFF</color>
+    <color name="vs_text_secondary">#B8BCC6</color>
+
+    <color name="vs_border">#343943</color>
+
+    <color name="vs_green">#4ADE80</color>
+    <color name="vs_blue">#60A5FA</color>
+    <color name="vs_orange">#FB923C</color>
+
 </resources>
