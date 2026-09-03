@@ -1,41 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/vs_background"
+    android:padding="20dp">
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/troubleshootingTitle"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="20dp">
+        android:text="Troubleshooting"
+        android:textColor="@color/vs_primary"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Troubleshooting"
-            android:textSize="26sp"
-            android:textStyle="bold" />
+    <TextView
+        android:id="@+id/troubleshootingDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Learn how to solve common computer problems"
+        android:textColor="@color/vs_text_secondary"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/troubleshootingTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-        <Button
-            android:id="@+id/internetButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="No Internet" />
+    <TextView
+        android:id="@+id/troubleshootingLabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="COMMON PROBLEMS"
+        android:textColor="@color/vs_text_secondary"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/troubleshootingDescription"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-        <Button
-            android:id="@+id/slowPcButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Slow PC" />
+    <Button
+        android:id="@+id/internetButton"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_category_button"
+        android:gravity="start|center_vertical"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:text="No Internet"
+        android:textAllCaps="false"
+        android:textColor="@color/vs_text"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/troubleshootingLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-        <Button
-            android:id="@+id/usbButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="USB not detected" />
+    <Button
+        android:id="@+id/slowPcButton"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_category_button"
+        android:gravity="start|center_vertical"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:text="Slow PC"
+        android:textAllCaps="false"
+        android:textColor="@color/vs_text"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/internetButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    </LinearLayout>
+    <Button
+        android:id="@+id/usbButton"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_category_button"
+        android:gravity="start|center_vertical"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:text="USB Not Detected"
+        android:textAllCaps="false"
+        android:textColor="@color/vs_text"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/slowPcButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

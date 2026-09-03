@@ -1,47 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/vs_background"
+    android:padding="20dp">
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/htmlTitle"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="20dp">
+        android:text="HTML &amp; CSS"
+        android:textColor="@color/vs_primary"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="HTML &amp; CSS"
-            android:textSize="26sp"
-            android:textStyle="bold" />
+    <TextView
+        android:id="@+id/htmlDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Learn the basics of web development"
+        android:textColor="@color/vs_text_secondary"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/htmlTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-        <EditText
-            android:id="@+id/searchBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Search topics" />
+    <TextView
+        android:id="@+id/htmlLabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="HTML &amp; CSS TOPICS"
+        android:textColor="@color/vs_text_secondary"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/htmlDescription"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-        <Button
-            android:id="@+id/basicTagsButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Basic Tags" />
+    <EditText
+        android:id="@+id/searchBox"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_search_box"
+        android:hint="Search topics..."
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:textColor="@color/vs_text"
+        android:textColorHint="@color/vs_text_secondary"
+        android:textSize="15sp"
+        android:singleLine="true"
+        android:inputType="text"
+        app:layout_constraintTop_toBottomOf="@id/htmlLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-        <Button
-            android:id="@+id/selectorsButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Selectors" />
+    <Button
+        android:id="@+id/basicTagsButton"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="14dp"
+        android:background="@drawable/bg_category_button"
+        android:gravity="start|center_vertical"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:text="Basic HTML Tags"
+        android:textAllCaps="false"
+        android:textColor="@color/vs_text"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/searchBox"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-        <Button
-            android:id="@+id/flexboxButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Flexbox" />
+    <Button
+        android:id="@+id/selectorsButton"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_category_button"
+        android:gravity="start|center_vertical"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:text="CSS Selectors"
+        android:textAllCaps="false"
+        android:textColor="@color/vs_text"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/basicTagsButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    </LinearLayout>
+    <Button
+        android:id="@+id/flexboxButton"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_category_button"
+        android:gravity="start|center_vertical"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:text="Flexbox"
+        android:textAllCaps="false"
+        android:textColor="@color/vs_text"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/selectorsButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

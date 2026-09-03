@@ -9,6 +9,7 @@ class NetworkingActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_networking)
 
         findViewById<Button>(R.id.ipButton)

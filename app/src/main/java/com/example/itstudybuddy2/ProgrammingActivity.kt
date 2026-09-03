@@ -14,7 +14,6 @@ class ProgrammingActivity : AppCompatActivity() {
 
         findViewById<Button>(R.id.variablesButton)
             .setOnClickListener {
-
                 openTopic(
                     "VARIABLES",
                     "Variables store data that can be used by a program.",
@@ -24,7 +23,6 @@ class ProgrammingActivity : AppCompatActivity() {
 
         findViewById<Button>(R.id.ifButton)
             .setOnClickListener {
-
                 openTopic(
                     "IF STATEMENTS",
                     "If statements allow a program to make decisions.",
@@ -34,7 +32,6 @@ class ProgrammingActivity : AppCompatActivity() {
 
         findViewById<Button>(R.id.loopsButton)
             .setOnClickListener {
-
                 openTopic(
                     "FOR LOOP",
                     "Repeats code a set number of times.",
@@ -44,7 +41,6 @@ class ProgrammingActivity : AppCompatActivity() {
 
         findViewById<Button>(R.id.functionsButton)
             .setOnClickListener {
-
                 openTopic(
                     "FUNCTIONS",
                     "Functions are reusable blocks of code that perform a task.",
@@ -58,7 +54,6 @@ class ProgrammingActivity : AppCompatActivity() {
         description: String,
         code: String
     ) {
-
         val intent =
             Intent(this, TopicActivity::class.java)
 

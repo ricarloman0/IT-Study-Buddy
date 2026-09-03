@@ -8,8 +8,6 @@
     android:background="@color/vs_background"
     android:padding="20dp">
 
-    <!-- App title -->
-
     <TextView
         android:id="@+id/appTitle"
         android:layout_width="0dp"
@@ -34,77 +32,100 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Programming -->
-
-    <Button
-        android:id="@+id/programmingButton"
+    <TextView
+        android:id="@+id/categoryLabel"
         android:layout_width="0dp"
-        android:layout_height="64dp"
-        android:layout_marginTop="24dp"
-        android:text="Programming"
-        android:textColor="@color/vs_text"
-        android:textSize="16sp"
-        android:backgroundTint="@color/vs_surface_light"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="LEARNING CATEGORIES"
+        android:textColor="@color/vs_text_secondary"
+        android:textSize="12sp"
+        android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@id/appSubtitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- HTML & CSS -->
+    <Button
+        android:id="@+id/programmingButton"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_category_button"
+        android:gravity="start|center_vertical"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:text="Programming"
+        android:textAllCaps="false"
+        android:textColor="@color/vs_text"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/categoryLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/htmlButton"
         android:layout_width="0dp"
-        android:layout_height="64dp"
+        android:layout_height="60dp"
         android:layout_marginTop="10dp"
+        android:background="@drawable/bg_category_button"
+        android:gravity="start|center_vertical"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
         android:text="HTML &amp; CSS"
+        android:textAllCaps="false"
         android:textColor="@color/vs_text"
         android:textSize="16sp"
-        android:backgroundTint="@color/vs_surface_light"
         app:layout_constraintTop_toBottomOf="@id/programmingButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- SQL -->
-
     <Button
         android:id="@+id/sqlButton"
         android:layout_width="0dp"
-        android:layout_height="64dp"
+        android:layout_height="60dp"
         android:layout_marginTop="10dp"
+        android:background="@drawable/bg_category_button"
+        android:gravity="start|center_vertical"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
         android:text="SQL"
+        android:textAllCaps="false"
         android:textColor="@color/vs_text"
         android:textSize="16sp"
-        android:backgroundTint="@color/vs_surface_light"
         app:layout_constraintTop_toBottomOf="@id/htmlButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Networking -->
-
     <Button
         android:id="@+id/networkingButton"
         android:layout_width="0dp"
-        android:layout_height="64dp"
+        android:layout_height="60dp"
         android:layout_marginTop="10dp"
+        android:background="@drawable/bg_category_button"
+        android:gravity="start|center_vertical"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
         android:text="Networking"
+        android:textAllCaps="false"
         android:textColor="@color/vs_text"
         android:textSize="16sp"
-        android:backgroundTint="@color/vs_surface_light"
         app:layout_constraintTop_toBottomOf="@id/sqlButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Troubleshooting -->
-
     <Button
         android:id="@+id/troubleshootingButton"
         android:layout_width="0dp"
-        android:layout_height="64dp"
+        android:layout_height="60dp"
         android:layout_marginTop="10dp"
+        android:background="@drawable/bg_category_button"
+        android:gravity="start|center_vertical"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
         android:text="Troubleshooting"
+        android:textAllCaps="false"
         android:textColor="@color/vs_text"
         android:textSize="16sp"
-        android:backgroundTint="@color/vs_surface_light"
         app:layout_constraintTop_toBottomOf="@id/networkingButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

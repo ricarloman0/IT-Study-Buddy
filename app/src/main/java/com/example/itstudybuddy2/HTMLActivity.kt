@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
@@ -12,6 +13,7 @@ class HTMLActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_htmlactivity)
 
         val searchBox =
@@ -26,46 +28,67 @@ class HTMLActivity : AppCompatActivity() {
         val flexboxButton =
             findViewById<Button>(R.id.flexboxButton)
 
-        searchBox.addTextChangedListener(object :
-            TextWatcher {
+        searchBox.addTextChangedListener(
+            object : TextWatcher {
 
-            override fun afterTextChanged(
-                s: Editable?
-            ) {
-                val search =
-                    s.toString().lowercase()
+                override fun afterTextChanged(
+                    s: Editable?
+                ) {
+                    val search =
+                        s.toString().trim().lowercase()
 
-                basicTagsButton.visibility =
-                    if ("basic".contains(search) ||
-                        "tags".contains(search)
-                    ) Button.VISIBLE
-                    else Button.GONE
+                    basicTagsButton.visibility =
+                        if (
+                            search.isEmpty() ||
+                            "basic html tags".contains(search) ||
+                            "html".contains(search) ||
+                            "tags".contains(search)
+                        ) {
+                            View.VISIBLE
+                        } else {
+                            View.GONE
+                        }
 
-                selectorsButton.visibility =
-                    if ("selector".contains(search))
-                        Button.VISIBLE
-                    else Button.GONE
+                    selectorsButton.visibility =
+                        if (
+                            search.isEmpty() ||
+                            "css selectors".contains(search) ||
+                            "css".contains(search) ||
+                            "selectors".contains(search)
+                        ) {
+                            View.VISIBLE
+                        } else {
+                            View.GONE
+                        }
 
-                flexboxButton.visibility =
-                    if ("flexbox".contains(search))
-                        Button.VISIBLE
-                    else Button.GONE
+                    flexboxButton.visibility =
+                        if (
+                            search.isEmpty() ||
+                            "flexbox".contains(search)
+                        ) {
+                            View.VISIBLE
+                        } else {
+                            View.GONE
+                        }
+                }
+
+                override fun beforeTextChanged(
+                    s: CharSequence?,
+                    start: Int,
+                    count: Int,
+                    after: Int
+                ) {
+                }
+
+                override fun onTextChanged(
+                    s: CharSequence?,
+                    start: Int,
+                    before: Int,
+                    count: Int
+                ) {
+                }
             }
-
-            override fun beforeTextChanged(
-                s: CharSequence?,
-                start: Int,
-                count: Int,
-                after: Int
-            ) {}
-
-            override fun onTextChanged(
-                s: CharSequence?,
-                start: Int,
-                before: Int,
-                count: Int
-            ) {}
-        })
+        )
 
         basicTagsButton.setOnClickListener {
             openTopic(

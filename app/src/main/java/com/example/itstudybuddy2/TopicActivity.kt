@@ -11,6 +11,9 @@ import androidx.appcompat.app.AppCompatActivity
 
 class TopicActivity : AppCompatActivity() {
 
+    private lateinit var favoriteButton: Button
+    private lateinit var copyButton: Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -36,38 +39,44 @@ class TopicActivity : AppCompatActivity() {
         val codeText =
             findViewById<TextView>(R.id.codeText)
 
-        val favoriteButton =
-            findViewById<Button>(R.id.favoriteButton)
+        favoriteButton =
+            findViewById(R.id.favoriteButton)
 
-        val copyButton =
-            findViewById<Button>(R.id.copyButton)
+        copyButton =
+            findViewById(R.id.copyButton)
 
         topicTitle.text = title
         topicDescription.text = description
         codeText.text = code
 
-        var favorite = false
+        val preferences =
+            getSharedPreferences(
+                "ITStudyBuddyFavorites",
+                MODE_PRIVATE
+            )
+
+        var favorite =
+            preferences.getBoolean(title, false)
+
+        updateFavoriteButton(favorite)
 
         favoriteButton.setOnClickListener {
 
             favorite = !favorite
 
+            preferences.edit()
+                .putBoolean(title, favorite)
+                .apply()
+
+            updateFavoriteButton(favorite)
+
             if (favorite) {
-
-                favoriteButton.text =
-                    "★ Remove from Favorites"
-
                 Toast.makeText(
                     this,
                     "Added to Favorites",
                     Toast.LENGTH_SHORT
                 ).show()
-
             } else {
-
-                favoriteButton.text =
-                    "☆ Add to Favorites"
-
                 Toast.makeText(
                     this,
                     "Removed from Favorites",
@@ -96,6 +105,18 @@ class TopicActivity : AppCompatActivity() {
                 "Code copied!",
                 Toast.LENGTH_SHORT
             ).show()
+        }
+    }
+
+    private fun updateFavoriteButton(
+        favorite: Boolean
+    ) {
+        if (favorite) {
+            favoriteButton.text =
+                "★ Remove from Favorites"
+        } else {
+            favoriteButton.text =
+                "☆ Add to Favorites"
         }
     }
 }
