@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/vs_background"
-    android:padding="20dp">
+    android:padding="20dp"
+    android:fitsSystemWindows="true">
 
     <TextView
         android:id="@+id/appTitle"
@@ -32,6 +33,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
+    <Button
+        android:id="@+id/favoritesButton"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_category_button"
+        android:gravity="center"
+        android:text="⭐ Favorites"
+        android:textAllCaps="false"
+        android:textColor="@color/vs_text"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/appSubtitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
     <TextView
         android:id="@+id/categoryLabel"
         android:layout_width="0dp"
@@ -41,7 +57,7 @@
         android:textColor="@color/vs_text_secondary"
         android:textSize="12sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/appSubtitle"
+        app:layout_constraintTop_toBottomOf="@id/favoritesButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

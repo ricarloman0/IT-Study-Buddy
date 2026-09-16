@@ -22,6 +22,9 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".FavoritesActivity"
+            android:exported="false" />
+        <activity
             android:name=".ProgrammingActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />

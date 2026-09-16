@@ -12,6 +12,17 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         findViewById<Button>(
+            R.id.favoritesButton
+        ).setOnClickListener {
+            startActivity(
+                Intent(
+                    this,
+                    FavoritesActivity::class.java
+                )
+            )
+        }
+
+        findViewById<Button>(
             R.id.programmingButton
         ).setOnClickListener {
             startActivity(

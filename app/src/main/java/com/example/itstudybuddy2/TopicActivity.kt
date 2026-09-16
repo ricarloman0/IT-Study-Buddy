@@ -8,11 +8,18 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
+import com.example.itstudybuddy2.database.AppDatabase
+import com.example.itstudybuddy2.database.Favorite
+import kotlinx.coroutines.launch
+import com.example.itstudybuddy2.database.FavoriteDao
 
 class TopicActivity : AppCompatActivity() {
 
     private lateinit var favoriteButton: Button
     private lateinit var copyButton: Button
+
+    private lateinit var favoriteDao: FavoriteDao
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,39 +56,57 @@ class TopicActivity : AppCompatActivity() {
         topicDescription.text = description
         codeText.text = code
 
-        val preferences =
-            getSharedPreferences(
-                "ITStudyBuddyFavorites",
-                MODE_PRIVATE
-            )
+        val database =
+            AppDatabase.getDatabase(this)
 
-        var favorite =
-            preferences.getBoolean(title, false)
+        favoriteDao =
+            database.favoriteDao()
 
-        updateFavoriteButton(favorite)
+        migrateOldFavorites()
+
+        lifecycleScope.launch {
+
+            val favorite =
+                favoriteDao.isFavorite(title)
+
+            updateFavoriteButton(favorite)
+        }
 
         favoriteButton.setOnClickListener {
 
-            favorite = !favorite
+            lifecycleScope.launch {
 
-            preferences.edit()
-                .putBoolean(title, favorite)
-                .apply()
+                val currentlyFavorite =
+                    favoriteDao.isFavorite(title)
 
-            updateFavoriteButton(favorite)
+                if (currentlyFavorite) {
 
-            if (favorite) {
-                Toast.makeText(
-                    this,
-                    "Added to Favorites",
-                    Toast.LENGTH_SHORT
-                ).show()
-            } else {
-                Toast.makeText(
-                    this,
-                    "Removed from Favorites",
-                    Toast.LENGTH_SHORT
-                ).show()
+                    favoriteDao.deleteFavorite(
+                        Favorite(title)
+                    )
+
+                    updateFavoriteButton(false)
+
+                    Toast.makeText(
+                        this@TopicActivity,
+                        "Removed from Favorites",
+                        Toast.LENGTH_SHORT
+                    ).show()
+
+                } else {
+
+                    favoriteDao.insertFavorite(
+                        Favorite(title)
+                    )
+
+                    updateFavoriteButton(true)
+
+                    Toast.makeText(
+                        this@TopicActivity,
+                        "Added to Favorites",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
             }
         }
 
@@ -105,6 +130,32 @@ class TopicActivity : AppCompatActivity() {
                 "Code copied!",
                 Toast.LENGTH_SHORT
             ).show()
+        }
+    }
+
+    private fun migrateOldFavorites() {
+
+        val preferences =
+            getSharedPreferences(
+                "ITStudyBuddyFavorites",
+                MODE_PRIVATE
+            )
+
+        lifecycleScope.launch {
+
+            for ((topicName, value) in preferences.all) {
+
+                if (value == true) {
+
+                    favoriteDao.insertFavorite(
+                        Favorite(topicName)
+                    )
+                }
+            }
+
+            preferences.edit()
+                .clear()
+                .apply()
         }
     }
 
